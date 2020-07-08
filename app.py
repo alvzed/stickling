@@ -34,6 +34,11 @@ def plant_nursery():
                            posts=mongo.db.post.find())
 
 
+@app.route('/new_post')
+def new_post():
+    return render_template('new_post.html')
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
