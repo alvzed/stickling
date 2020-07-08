@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    
+    {% for post in posts %}
+        {% if post.feed == 'greenhouse' %}
+            {{post.feed}}
+            {{post.user}}
+            {{post.description}}
+            {{post.picture}}
+            {{post.comments}}
+        {% endif %}
+    {% endfor %}
+    
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    
+    {% for post in posts %}
+        {% if post.feed == 'propagation_station' %}
+            {{post.feed}}
+            {{post.user}}
+            {{post.description}}
+            {{post.picture}}
+            {{post.comments}}
+        {% endif %}
+    {% endfor %}
+    
+
+{% endblock %}

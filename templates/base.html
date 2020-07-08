@@ -6,13 +6,46 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Title</title>
   </head>
   <body>
-  <h1>outside</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">stickling</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Plant Nursery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Greenhouse</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Propagation Station</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-    
+    <section>
+      <div class="row">
+        <div id="leftSideBar" class="col-2">
+        
+        </div>
+
+        <div id="content" class="col-8">
+          {% block content %}
+          {% endblock %}  
+        </div>
+          
+        <div id="rightSideBar" class="col-2">
+        
+        </div>
+      </div> <!-- row -->
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>

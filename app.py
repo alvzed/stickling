@@ -17,8 +17,21 @@ mongo = PyMongo(app)
 
 @app.route('/')
 @app.route('/propagation_station')
-def get_posts():
-    return render_template('index.html', posts=mongo.db.post.find())
+def propagation_station():
+    return render_template('propagation_station.html',
+                           posts=mongo.db.post.find())
+
+
+@app.route('/greenhouse')
+def greenhouse():
+    return render_template('greenhouse.html',
+                           posts=mongo.db.post.find())
+
+
+@app.route('/plant_nursery')
+def plant_nursery():
+    return render_template('plant_nursery.html',
+                           posts=mongo.db.post.find())
 
 
 if __name__ == '__main__':
