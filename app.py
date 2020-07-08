@@ -39,6 +39,10 @@ def new_post():
     return render_template('new_post.html')
 
 
+# @app.route('/create_post')
+# def create_post():
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
