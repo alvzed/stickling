@@ -1,16 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    
-    {% for post in posts %}
-        {% if post.feed == 'propagation_station' %}
-            {{post.feed}}
-            {{post.user}}
-            {{post.description}}
-            {{post.picture}}
-            {{post.comments}}
-        {% endif %}
-    {% endfor %}
-    
+  {% for post in posts %}
+    <div class="row">
+      <div class="col-4">
+        <img src="{{post.picture}}" alt="Image related to post" class="post_image">
+      </div>
+      <div class="col-8">
+        <h2>{{post.title}}</h2>
+        <h5>{{post.barter}}</h5>
+        <h6>{{post.username}}</h3>
+        <p>{{post.description}}</p>
+        <a href="mailto:{{post.emailaddress}}" class="btn btn-info">Contact</a>
+      </div>
+    </div> 
+
+    <div class="comments">
+      <p>{{post.comments}}</p>
+    </div>
+  {% endfor %}
 
 {% endblock %}

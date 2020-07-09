@@ -21,7 +21,12 @@
 
   <div class="form-group">
     <label for="username">Username</label>
-    <input type="text" class="form-control" id="username" placeholder="John Doe" required>
+    <input type="text" class="form-control" id="username" name="username" placeholder="John Doe" required>
+  </div>
+
+  <div class="form-group">
+    <label for="title">Post Title</label>
+    <input type="text" class="form-control" name="title" id="title" placeholder="http://photo-url.com" required>
   </div>
 
   <div class="form-group">
@@ -37,9 +42,9 @@
   <div class="form-group">
     <label for="barter">Choose market</label>
     <select class="form-control" name="barter" id="barter" required>
-      <option value="want_to_buy">Want to buy</option>
-      <option value="want_to_sell">Want to sell</option>
-      <option value="want_to_trade">Want to trade</option>
+      <option value="Want to buy">Want to buy</option>
+      <option value="Want to sell">Want to sell</option>
+      <option value="Want to trade">Want to trade</option>
     </select>
   </div>
 
