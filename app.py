@@ -39,8 +39,11 @@ def new_post():
     return render_template('new_post.html')
 
 
-# @app.route('/create_post')
-# def create_post():
+@app.route('/create_post', methods=['POST'])
+def create_post():
+    posts = mongo.db.post
+    posts.insert_one(request.form.to_dict())
+    return redirect(url_for('propagation_station'))
 
 
 if __name__ == '__main__':
