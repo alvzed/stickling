@@ -12,9 +12,7 @@
         <h6>{{post.username}}</h3>
         <p>{{post.description}}</p>
         <div class="post_buttons">
-            <a href="mailto:{{post.emailaddress}}" class="btn btn-info">Contact</a>
             <a href="{{ url_for('view_post', post_id=post._id) }}" class="btn btn-secondary">View</a>
-            <a href=""></a>
         </div>
         
       </div>
