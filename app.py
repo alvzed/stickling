@@ -34,6 +34,12 @@ def plant_nursery():
                            posts=mongo.db.post.find())
 
 
+@app.route('/post/<post_id>')
+def view_post(post_id):
+    the_post = mongo.db.post.find_one({'_id': ObjectId(post_id)})
+    return render_template('post.html', post=the_post)
+
+
 @app.route('/new_post')
 def new_post():
     return render_template('new_post.html')
