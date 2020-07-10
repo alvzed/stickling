@@ -11,7 +11,22 @@
 }
 
 /* -------------- posts ------------- */
+.post_feed {
+    max-height: 40vh;
+    position: relative;
+    margin-bottom: 2vh; 
+    margin-top: 2vh;
+}
+
 .post_image {
     width: 100%;
+    max-height: 40vh;
+    object-fit: cover;
+    object-position: center;
     overflow: hidden;
+}
+
+.post_feed .post_buttons {
+    position: absolute;
+    bottom: 1vh;
 }
