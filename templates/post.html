@@ -25,10 +25,9 @@
 
   <div class="comments">
 
-    {{ post.comments|length }}
-
     {% for i in post.comments %}
-    <p>{{ post.comments[loop.index0] }}</p>
+    <h5>{{ post.comments[loop.index0].username }}</h5>
+    <p>{{ post.comments[loop.index0].comment }}</p>
     {% endfor %}
 
     <form action="{{ url_for('add_comment', post_id=post._id) }}" method="POST">
