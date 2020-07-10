@@ -78,6 +78,16 @@ def delete_post(post_id):
     return redirect(url_for('propagation_station'))
 
 
+@app.route('/add_comment/<post_id>', methods=['POST'])
+def add_comment(post_id):
+    post = mongo.db.post
+    post.update({'_id': ObjectId(post_id)},
+                {'$push': {'comments': {'comment': request.form.get('comment'),
+                           'username': request.form.get('username')}}
+                 }, upsert=True)
+    return redirect(url_for('propagation_station'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),

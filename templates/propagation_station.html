@@ -7,10 +7,10 @@
         <img src="{{post.picture}}" alt="Image related to post" class="post_image">
       </div>
       <div class="col-8">
-        <h2>{{post.title}}</h2>
-        <h6>{{post.location}}</h6>
-        <h5>{{post.barter}}</h5>
-        <h6>{{post.username}}</h3>
+        <h2 class="post_title">{{post.title}}</h2>
+        <h6 class="post_location">{{post.location}}</h6>
+        <h5 class="post_barter">{{post.barter}}</h5>
+        <h6 class="post_username">{{post.username}}</h6>
         <div class="post_buttons">
             <a href="{{ url_for('view_post', post_id=post._id) }}" class="btn btn-secondary">View Post</a>
         </div>

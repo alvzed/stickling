@@ -8,7 +8,7 @@
       <div class="col-8">
         <h2>{{post.title}}</h2>
         <h5>{{post.barter}}</h5>
-        <h6>{{post.username}}</h3>
+        <h6>{{post.username}}</h6>
         <p>{{post.description}}</p>
         
         
@@ -30,6 +30,19 @@
     {% for i in post.comments %}
     <p>{{ post.comments[loop.index0] }}</p>
     {% endfor %}
+
+    <form action="{{ url_for('add_comment', post_id=post._id) }}" method="POST">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+      </div>
+
+      <div class="form-group">
+        <label for="comment">Comment</label>
+        <input type="text" class="form-control" id="comment" name="comment" placeholder="New Comment">
+      </div>
+      <button type="submit" class="btn btn-primary" name="action">Add Comment</button>
+    </form>
   </div>
 
 {% endblock %}
