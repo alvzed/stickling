@@ -52,6 +52,26 @@ def create_post():
     return redirect(url_for('propagation_station'))
 
 
+@app.route('/edit_post/<post_id>')
+def edit_post(post_id):
+    the_post = mongo.db.post.find_one({'_id': ObjectId(post_id)})
+    return render_template('edit_post.html', post=the_post)
+
+
+@app.route('/update_post/<post_id>', methods=['POST'])
+def update_post(post_id):
+    posts = mongo.db.post
+    posts.update({'_id': ObjectId(post_id)},
+                 {
+                    'title': request.form.get('title'),
+                    'picture': request.form.get('picture'),
+                    'location': request.form.get('location'),
+                    'barter': request.form.get('barter'),
+                    'description': request.form.get('description')
+                 })
+    return redirect(url_for('propagation_station'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
