@@ -17,7 +17,7 @@
 
     <div class="row container">
         <div class="post_buttons">
-            <a href="mailto:{{post.emailaddress}}" class="btn btn-success">Contact</a>
+            <a href="mailto:{{post.emailaddress}}?subject=stickling - {{post.title}}" class="btn btn-success">Contact</a>
             {% if not post.indestructible %}
               <a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn btn-warning">Edit</a>
               <a href="{{ url_for('delete_post', post_id=post._id) }}" class="btn btn-danger">Delete</a>
