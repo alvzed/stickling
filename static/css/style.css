@@ -2,7 +2,9 @@
     overflow: hidden;
 }
 
-
+#content {
+    min-height: 90vh;
+}
 
 /* -------------- colours ------------- */
 body {
@@ -25,6 +27,13 @@ p {
 .btn-primary-green:hover {
     background-color: #fdfdfd;
     color: #A0B0B0;
+}
+
+/* -------------- navbar ------------- */
+#site_logo {
+    font-size: 2rem;
+    margin: 0 1rem;
+    color: #98A068;
 }
 
 /* -------------- the left side bar ------------- */
@@ -54,14 +63,17 @@ p {
 
 /* -------------- posts ------------- */
 .post_feed {
-    max-height: 40vh;
     position: relative;
+
+    max-height: 40vh;
+
     margin: 2vh 1vw;
     margin-right: 50vw;
     background-color: rgba(255, 255, 255, 0.3);
     padding: 2em 0;
     padding-left: 1vw;
     max-width: 97%;
+
 }
 
 .post_image {
@@ -75,4 +87,24 @@ p {
 .post_feed .post_buttons {
     position: absolute;
     bottom: 1vh;
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+    .post_feed {
+    position: relative;
+
+    max-height: 40vh;
+    min-height: 21vh;
+    }
+
+    .post_image {
+    min-width: 100%;
+    min-height: 21vh;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    h2 {
+        font-size: 1.5rem;
+    }
 }
