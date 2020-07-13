@@ -2,12 +2,54 @@
     overflow: hidden;
 }
 
-#leftSideBar {
-    background-color: green;
+
+
+/* -------------- colours ------------- */
+body {
+    background-color: #E8F0F0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    color: #405050;
+}
+
+p {
+    color: #182018;
+}
+
+.btn-primary-green {
+    background-color: #889898;
+    color: #E8F0F0; 
+}
+
+.btn-primary-green:hover {
+    background-color: #fdfdfd;
+    color: #A0B0B0;
+}
+
+/* -------------- the left side bar ------------- */
+#leftSideBar {
+    position: relative;
+    background-color: #A0B0B0;
+}
+
+/* -------------- the right side bar ------------- */
 #rightSideBar {
-    background-color: lightseagreen;
+    position: relative;
+    background-color: #A0B0B0;
+}
+
+#new_post {
+    position: fixed;
+    right: 5vw;
+    bottom: 5vh;
+    font-size: 5rem;
+    color: #fdfdfd;
+    transition: 200ms;
+}
+
+#new_post:hover {
+    color: #405050;
 }
 
 /* -------------- posts ------------- */
