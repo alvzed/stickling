@@ -8,10 +8,10 @@ app = Flask(__name__)
 
 if os.path.exists("env.py"):
     import env
-secret_key = os.environ.get('secret_key')
+secret_uri = os.environ.get('secret_uri')
 
 app.config['MONGO_DBNAME'] = 'sticklingDB'
-app.config['MONGO_URI'] = 'mongodb+srv://alvzed:%s@sticklingcluster.vbm1p.mongodb.net/sticklingDB?retryWrites=true&w=majority' % secret_key
+app.config['MONGO_URI'] = secret_uri
 mongo = PyMongo(app)
 
 
@@ -22,16 +22,16 @@ def propagation_station():
                            posts=mongo.db.post.find())
 
 
-@app.route('/greenhouse')
-def greenhouse():
-    return render_template('greenhouse.html',
-                           posts=mongo.db.post.find())
+# @app.route('/greenhouse')
+# def greenhouse():
+#    return render_template('greenhouse.html',
+#                           posts=mongo.db.post.find())
 
 
-@app.route('/plant_nursery')
-def plant_nursery():
-    return render_template('plant_nursery.html',
-                           posts=mongo.db.post.find())
+# @app.route('/plant_nursery')
+# def plant_nursery():
+#     return render_template('plant_nursery.html',
+#                            posts=mongo.db.post.find())
 
 
 @app.route('/post/<post_id>')
