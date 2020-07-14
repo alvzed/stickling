@@ -37,7 +37,8 @@ def propagation_station():
 @app.route('/post/<post_id>')
 def view_post(post_id):
     the_post = mongo.db.post.find_one({'_id': ObjectId(post_id)})
-    return render_template('post.html', post=the_post)
+    comments = mongo.db.comments.find({'post_id': post_id})
+    return render_template('post.html', post=the_post, comments=comments)
 
 
 @app.route('/new_post')
@@ -80,12 +81,19 @@ def delete_post(post_id):
 
 @app.route('/add_comment/<post_id>', methods=['POST'])
 def add_comment(post_id):
-    post = mongo.db.post
-    post.update({'_id': ObjectId(post_id)},
-                {'$push': {'comments': {'comment': request.form.get('comment'),
-                           'username': request.form.get('username')}}
-                 }, upsert=True)
-    return redirect(url_for('propagation_station'))
+    comments = mongo.db.comments
+    comments.insert_one(request.form.to_dict(),
+                        {'$push': {'post_id': ObjectId(post_id),
+                                   'comment': request.form.get('comment'),
+                                   'username': request.form.get('username')}
+                         })
+    return view_post(post_id)
+
+
+@app.route('/delete_comment/<post_id>/<comment_id>')
+def delete_comment(post_id, comment_id):
+    mongo.db.comments.remove({'_id': ObjectId(comment_id)})
+    return view_post(post_id)
 
 
 if __name__ == '__main__':

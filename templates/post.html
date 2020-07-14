@@ -1,35 +1,40 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <div class="row">
-      <div class="col-4">
-        <img src="{{post.picture}}" alt="Image related to post" class="post_image">
+    <div class="row post_container">
+      <div class=" col-12 col-sm-6 col-md-5">
+        <img src="{{post.picture}}" alt="Image related to post" class="post_image post_focus_image">
       </div>
-      <div class="col-8">
-        <h2>{{post.title}}</h2>
-        <h5>{{post.barter}}</h5>
-        <h6>{{post.username}}</h6>
-        <p>{{post.description}}</p>
+      <div class="col-12 col-sm-6 col-md-7 post_text_container">
+        <div class="post_text">
+            <h2>{{post.title}}</h2>
+            <h5 class="post_market">{{post.barter}}</h5>
+            <h6 class="post_username">{{post.username}}</h6>
+            <p>{{post.description}}</p>
+        </div>
         
         
       </div>
     </div> 
 
-    <div class="row container">
+    <div class="row container post_button_container">
         <div class="post_buttons">
-            <a href="mailto:{{post.emailaddress}}?subject=stickling - {{post.title}}" class="btn btn-success">Contact</a>
+            <a href="mailto:{{post.emailaddress}}?subject=stickling - {{post.title}}" class="btn btn-contact">Contact</a>
             {% if not post.indestructible %}
-              <a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn btn-warning">Edit</a>
-              <a href="{{ url_for('delete_post', post_id=post._id) }}" class="btn btn-danger">Delete</a>
+              <a href="{{ url_for('edit_post', post_id=post._id) }}" class="btn btn-edit">Edit</a>
+              <a href="{{ url_for('delete_post', post_id=post._id) }}" class="btn btn-delete">Delete</a>
             {% endif %}
         </div>
     </div>
 
-  <div class="comments">
+  <div class="comments container">
 
-    {% for i in post.comments %}
-    <h5>{{ post.comments[loop.index0].username }}</h5>
-    <p>{{ post.comments[loop.index0].comment }}</p>
+    {% for comment in comments %}
+    <div class="post_comments">
+        <h5>{{ comment.username }}</h5>
+        <p>{{ comment.comment }}</p>
+        <a href="{{ url_for('delete_comment', comment_id=comment._id, post_id=post._id) }}" class="btn btn-delete">Delete</a>
+    </div>
     {% endfor %}
 
     <form action="{{ url_for('add_comment', post_id=post._id) }}" method="POST">
@@ -42,7 +47,7 @@
         <label for="comment">Comment</label>
         <input type="text" class="form-control" id="comment" name="comment" placeholder="New Comment">
       </div>
-      <button type="submit" class="btn btn-primary-green" name="action">Add Comment</button>
+      <button type="submit" class="btn btn-primary-green" name="post_id" value="{{ post._id }}">Add Comment</button>
     </form>
   </div>
 
