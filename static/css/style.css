@@ -120,6 +120,10 @@ p {
     h2 {
         font-size: 1.5rem;
     }
+
+    .post_image {
+        min-height: 27vh;
+    }
 }
 
 /* -------------- post focus page ------------- */
@@ -191,6 +195,25 @@ p {
     color: #dfcfcf;
 }
 
+@media screen and (max-width: 500px) {
+    .post_container {
+        margin-bottom: 2vh;
+    }
+
+    .post_text_container {
+        max-width: 92%;
+        margin: 0 4%;
+    }
+
+    .post_text {
+        margin: 2vh 1vw;
+    }
+
+    .post_text h6 {
+        margin-top: 2vh;
+    }
+}
+
 /* -------------- post comments ------------- */
 .post_comments {
     background-color: rgba(255, 255, 255, 0.3);
@@ -199,4 +222,10 @@ p {
 .post_comments {
     padding: 0.6rem 1.5rem 0.2rem 1rem;
     margin: 1rem 0;
+}
+
+.delete_comment {
+    margin-bottom: 0.7rem;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.3rem;
 }
