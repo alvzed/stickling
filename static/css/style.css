@@ -61,10 +61,33 @@ p {
     color: #405050;
 }
 
+@media screen and (max-aspect-ratio: 1/1) {
+    #rightSideBar {
+        position: fixed;
+        height: 10vh;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgba(253,253,253, 0.8);
+    }
+
+    #new_post {
+        color: rgba(64,80,80, 0.7);
+        right: 45vw;
+        left: 43vw;
+        bottom: 1.2vh;
+        font-size: 3.5rem;
+    }
+
+    #content {
+        margin-bottom: 10vh!important;
+    }
+}
+
 /* -------------- posts ------------- */
 .post_feed {
     position: relative;
-
+    min-height: 37vh;
     max-height: 40vh;
 
     margin: 2vh 1vw;
@@ -77,7 +100,9 @@ p {
 }
 
 .post_image {
-    width: 100%;
+    min-width: 100%;
+    max-width: 10vw;
+    min-height: 100%;
     max-height: 30vh;
     object-fit: cover;
     object-position: center;
@@ -123,6 +148,7 @@ p {
 
     .post_image {
         min-height: 27vh;
+        max-width: 35vw;
     }
 }
 
