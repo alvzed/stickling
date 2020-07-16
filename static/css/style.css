@@ -78,7 +78,6 @@ p {
 
 #hero_buttons a {
     min-width: 15vw;
-    
 }
 
 #btn_plant_nursery {
@@ -103,6 +102,10 @@ p {
     #landing_page_text {
         margin-left: -58vw;
         margin-bottom: 5vh;
+        background-color: rgba(232,240,240, 0.7);
+        min-height: 3.5rem;
+        padding: 0.1rem 0.2rem;
+        border-radius: 5px;
     }
 }
 
@@ -112,27 +115,9 @@ p {
     }
 
     #landing_page_text {
-        max-width: 40vw;
+        max-width: 43vw;
         margin-left: 7vw;
         position: relative;
-    }
-
-    #landing_page_text::before {
-        content: 'ion';
-        position: absolute;
-        left: 33.5vw;
-        top: 0;
-        z-index: 1;
-        color: rgba(253,253,253,0.8);
-    }
-
-    #landing_page_text::after {
-        content: 'ts';
-        position: absolute;
-        left: 32.3vw;
-        top: 3vh;
-        z-index: 1;
-        color: rgba(253,253,253,0.8);
     }
 
     #hero_buttons {
@@ -142,6 +127,25 @@ p {
     #hero_buttons a {
         min-width: 20vw;
         font-size: 0.8rem;
+    }
+}
+
+
+@media screen and (max-width: 320px) {
+    #landing_page_text {
+        max-width: 46vw;
+        margin-left: 3vw;
+        position: relative;
+        font-size: 0.9rem;
+    }
+
+    #hero_buttons {
+        margin-left: -17vw;
+    }
+
+    #hero_buttons a {
+        min-width: 20vw;
+        font-size: 0.75rem;
     }
 }
 
@@ -363,4 +367,9 @@ p {
     margin-bottom: 0.7rem;
     font-size: 0.8rem;
     padding: 0.2rem 0.3rem;
+}
+
+/* -------------- New post ------------- */
+#new_post_container {
+    padding: 0 15vw;
 }
