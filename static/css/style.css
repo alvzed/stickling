@@ -36,6 +36,64 @@ p {
     color: #98A068;
 }
 
+/* -------------- landing page ------------- */
+#hero_container {
+    position: relative;
+}
+
+#hero_image {
+    background-image: url('https://images.unsplash.com/photo-1533239592469-733074d9b7a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 60vw;
+    position: absolute;
+    right: 0;
+    z-index: -100;
+}
+
+#hero_container h1 {
+    padding-top: 20vh;
+    margin-left: -22vw;
+    color: #fdfdfd;
+    font-size: 15rem;
+    opacity: 0.8;
+}
+
+#hero_container h1::before {
+    content: 'stick';
+    position: absolute;
+    color: #182018;
+    opacity: 0.5;
+}
+
+#hero_container p {
+    margin-left: -45vw;
+}
+
+#hero_buttons {
+    margin-left: -20vw;
+}
+
+#hero_buttons a {
+    width: 15vw;
+    
+}
+
+#btn_plant_nursery {
+    margin-left: 15vw;
+    background-color: #fdfdfd;
+    opacity: 0.8;
+    transition: 200ms;
+}
+
+#btn_plant_nursery:hover {
+    background-color: #182018;
+    opacity: 0.6;
+    color: #fdfdfd;
+}
+
 /* -------------- the left side bar ------------- */
 #leftSideBar {
     position: relative;

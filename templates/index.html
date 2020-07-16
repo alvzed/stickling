@@ -1,6 +1,31 @@
-{% extends 'base.html' %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>stickling</title>
+  </head>
+  <body>
 
-    
+    <div class="text-center" id="hero_container">
+      <div id="hero_image" class="text-center"></div>
+      <h1>stickling</h1>
+      <p>The one stop station for plant parents</p>
+      <div id="hero_buttons">
+        <a href="#" class="btn btn-primary-green">Find new plants</a>
+        <a href="#" class="btn" id="btn_plant_nursery">Get advice</a>
+      </div>
+      
+    </div>
 
-{% endblock %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
+
+

@@ -2,7 +2,7 @@
 {% block content %}
 
 <h3>New post</h3>
-
+<div class="container mb-3 mb-sm-0">
 <form action="{{ url_for('create_post') }}" method="POST">
 <!--
   <div class="form-group">
@@ -56,5 +56,6 @@
   <button type="submit" class="btn btn-primary" name="action">Submit</button>
 </form>
 
+</div>
 
 {% endblock %}
