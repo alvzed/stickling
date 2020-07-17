@@ -10,7 +10,6 @@ if os.path.exists("env.py"):
     import env
 secret_uri = os.environ.get('secret_uri')
 
-app.config['MONGO_DBNAME'] = 'sticklingDB'
 app.config['MONGO_URI'] = secret_uri
 mongo = PyMongo(app)
 
@@ -29,6 +28,8 @@ def propagation_station():
 @app.route('/post/<post_id>')
 def view_post(post_id):
     the_post = mongo.db.post.find_one({'_id': ObjectId(post_id)})
+    if the_post is None:
+        return redirect(url_for('page_not_found'))
     comments = mongo.db.comments.find({'post_id': post_id})
     return render_template('post.html', post=the_post, comments=comments)
 
@@ -69,6 +70,10 @@ def update_post(post_id):
 def delete_post(post_id):
     mongo.db.post.remove({'_id': ObjectId(post_id)})
     return redirect(url_for('propagation_station'))
+
+@app.route('/404')
+def page_not_found():
+    return render_template('404.html')
 
 
 @app.route('/add_comment/<post_id>', methods=['POST'])
