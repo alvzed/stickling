@@ -373,3 +373,7 @@ p {
 #new_post_container {
     padding: 0 15vw;
 }
+
+#barter_div {
+    display: none;
+}
