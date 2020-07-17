@@ -25,6 +25,12 @@ def propagation_station():
                            posts=mongo.db.post.find())
 
 
+@app.route('/plant_nursery')
+def plant_nursery():
+    return render_template('plant_nursery.html',
+                           posts=mongo.db.post.find())
+
+
 @app.route('/post/<post_id>')
 def view_post(post_id):
     the_post = mongo.db.post.find_one({'_id': ObjectId(post_id)})
@@ -74,6 +80,11 @@ def delete_post(post_id):
 @app.route('/404')
 def page_not_found():
     return render_template('404.html')
+
+
+@app.errorhandler(404)
+def error_404(error):
+    return page_not_found(), 404
 
 
 @app.route('/add_comment/<post_id>', methods=['POST'])

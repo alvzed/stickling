@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
+  <h1>Please help my plant</h1>
 
   {% for post in posts %}
-    {% if post.feed == 'propagation_station' %}
+    {% if post.feed == 'plant_nursery' %}
       <div class="row container post_feed">
         <div class="col-6 col-sm-4 image_container">
           <img src="{{post.picture}}" alt="Image related to post" class="post_image">
@@ -10,7 +11,6 @@
         <div class="col-6 col-sm-8">
           <h2 class="post_title">{{post.title}}</h2>
           <h6 class="post_location">{{post.location}}</h6>
-          <h5 class="post_barter">{{post.barter}}</h5>
           <h6 class="post_username">{{post.username}}</h6>
           <div class="post_buttons">
               <a href="{{ url_for('view_post', post_id=post._id) }}" class="btn btn-primary-green">View Post</a>
@@ -19,6 +19,4 @@
       </div> 
     {% endif %}
   {% endfor %}
-  
-
 {% endblock %}
