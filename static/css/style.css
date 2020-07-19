@@ -160,6 +160,16 @@ p {
     background-color: #A0B0B0;
 }
 
+@media screen and (max-aspect-ratio: 1/1) {
+    #leftSideBar {
+        display: none!important;
+    }
+
+    #content {
+        margin: 0 auto;
+    }
+}
+
 /* -------------- the right side bar ------------- */
 #rightSideBar {
     position: relative;
@@ -182,6 +192,7 @@ p {
 @media screen and (max-aspect-ratio: 1/1) {
     #rightSideBar {
         position: fixed;
+        min-width: 100vw;
         height: 10vh;
         bottom: 0;
         right: 0;
@@ -261,12 +272,22 @@ p {
 
 @media screen and (max-width: 500px) {
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .post_image {
-        min-height: 27vh;
+        min-height: 38vh;
         max-width: 35vw;
+    }
+
+    .post_feed {
+        min-height: 50vh;
+        max-height: 58vh;
+    }
+
+    .plant_nursery_post {
+        min-height: 45vh;
+        max-height: 50vh;
     }
 }
 
