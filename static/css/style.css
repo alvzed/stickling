@@ -80,6 +80,12 @@ p {
     min-width: 15vw;
 }
 
+#hero_buttons .btn-primary-green:hover {
+    background-color: #405050;
+    color: #fdfdfd;
+    opacity: 1;
+}
+
 #btn_plant_nursery {
     margin-left: 15vw;
     background-color: #fdfdfd;
@@ -88,9 +94,8 @@ p {
 }
 
 #btn_plant_nursery:hover {
-    background-color: #182018;
-    opacity: 0.6;
-    color: #fdfdfd;
+    background-color: #fdfdfd;
+    opacity: 1;
 }
 
 @media screen and (max-aspect-ratio: 1/1) {
@@ -263,6 +268,15 @@ p {
         min-height: 27vh;
         max-width: 35vw;
     }
+}
+
+/* -------------- plant nursery ------------- */
+.plant_nursery_post {
+    background-color: rgba(223,207,207,0.6);
+}
+
+.plant_nursery_post .post_location {
+    color: #776767;
 }
 
 /* -------------- post focus page ------------- */

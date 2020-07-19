@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h1>Please help my plant</h1>
+
 
   {% for post in posts %}
     {% if post.feed == 'plant_nursery' %}
-      <div class="row container post_feed">
+      <div class="row container post_feed plant_nursery_post">
         <div class="col-6 col-sm-4 image_container">
           <img src="{{post.picture}}" alt="Image related to post" class="post_image">
         </div>
