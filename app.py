@@ -77,6 +77,7 @@ def delete_post(post_id):
     mongo.db.post.remove({'_id': ObjectId(post_id)})
     return redirect(url_for('propagation_station'))
 
+
 @app.route('/404')
 def page_not_found():
     return render_template('404.html')
