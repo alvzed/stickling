@@ -48,8 +48,9 @@ def new_post():
 @app.route('/create_post', methods=['POST'])
 def create_post():
     posts = mongo.db.post
+    form = request.form.to_dict()
     posts.insert_one(request.form.to_dict())
-    return redirect(url_for('propagation_station'))
+    return redirect(url_for(form['feed']))
 
 
 @app.route('/edit_post/<post_id>')
