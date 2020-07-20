@@ -22,6 +22,16 @@ Use this section to provide insight into your UX process, focusing on who this w
 
 ![Sign up page desktop](/wireframes/signup_desktop.png)
 
+![Sign up page desktop](/wireframes/login_desktop.png)
+
+![Sign up page desktop](/wireframes/propagation_station_desktop.png)
+
+![Sign up page desktop](/wireframes/plant_nursery_desktop.png)
+
+![Sign up page desktop](/wireframes/greenhouse_desktop.png)
+
+![Sign up page desktop](/wireframes/mobile_view.png)
+
 All the wireframes were made using balsamiq and were a general approximation for how to layout would actually look. The UI has changed quite a bit since this step in the process. 
 
 This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
