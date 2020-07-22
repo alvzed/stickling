@@ -5,11 +5,11 @@
 <div class="container mb-3 mb-sm-5" id="new_post_container">
 <form action="{{ url_for('create_post') }}" method="POST">
 
-  <div class="form-check form-check-inline">
+  <div class="form-check form-check-inline checkboxes">
     <input class="form-check-input" type="checkbox" name="feed" id="propagation_station" value="propagation_station">
     <label class="form-check-label" for="propagation_station">Propagation Station</label>
   </div>
-  <div class="form-check form-check-inline">
+  <div class="form-check form-check-inline checkboxes">
     <input class="form-check-input" type="checkbox" name="feed" id="plant_nursery" value="plant_nursery">
     <label class="form-check-label" for="plant_nursery">Plant Nursery</label>
   </div>
