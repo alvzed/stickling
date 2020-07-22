@@ -49,6 +49,7 @@ def new_post():
 def create_post():
     posts = mongo.db.post
     form = request.form.to_dict()
+    validate_form(form)
     posts.insert_one(request.form.to_dict())
     return redirect(url_for(form['feed']))
 
@@ -109,4 +110,4 @@ def delete_comment(post_id, comment_id):
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=True)
+            debug=False)
