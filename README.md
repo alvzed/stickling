@@ -43,20 +43,6 @@ These three images above match what are the three main features of stickling. Al
 As you can see these is only one wireframe for the mobile view, it is this way because it was used more to represent the general ratio the content would have on the mobile view compared to the desktop view.
 
 
-##### The site now
-Due to differences in the scope and the minimal viable product the site ended up with some differences, specifically for the landing page which now looks like this: 
-![The deployed landing page](/wireframes/stickling_index.png)
-This is mainly because this version doesn't have user authentication as of yet, so the login and sign up pages were not necessary.
-
-The two different feeds that made it to the final version are the Propagation Station and Plant Nursery. Images below. 
-![Deployed Propagation Station](/wireframes/prop_stat_index.png)
-![The deployed landing page](/wireframes/plant_nursery.png)
-As you can see the main difference between these and the wireframe is that the photo is now on the left side of the post instead of the top. This is because I opted for a title on the posts since it brings more context to the post which I felt was needed due to the nature of these two feeds. 
-
-The deployed version also has a a 'focus' page which looks like this: 
-![The posts](/wireframes/post_focus.png)
-This was implemented so that users can add longer descrition on the posts. These are not present on the feed due to them cluttering up the feeds. 
-
 ## Features
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
@@ -135,6 +121,23 @@ In addition, you should mention in this section how your project looks and works
 You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
 
 If this section grows too long, you may want to split it off into a separate file and link to it from here.
+
+##### The site now
+Due to differences in the scope and the minimal viable product the site ended up with some differences, specifically for the landing page which now looks like this: 
+![The deployed landing page](/wireframes/stickling_index.png)
+![The deployed landing page for phone](/wireframes/stickling_index_phone.png)
+This is mainly because this version doesn't have user authentication as of yet, so the login and sign up pages were not necessary.
+
+The two different feeds that made it to the final version are the Propagation Station and Plant Nursery. Images below. 
+![Deployed Propagation Station](/wireframes/prop_stat_index.png)
+![Deployed Propagation Station for phone](/wireframes/prop_stat_phone.png)
+![The deployed Plant Nursery](/wireframes/plant_nursery.png)
+![The deployed Plant Nursery for phone](/wireframes/plant_nursery_phone.png)
+As you can see the main difference between these and the wireframe is that the photo is now on the left side of the post instead of the top. This is because I opted for a title on the posts since it brings more context to the post which I felt was needed due to the nature of these two feeds. 
+
+The deployed version also has a a 'focus' page which looks like this: 
+![The posts](/wireframes/post_focus.png)
+This was implemented so that users can add longer descrition on the posts. These are not present on the feed due to them cluttering up the feeds. 
 
 ## Deployment
 
