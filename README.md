@@ -1,6 +1,6 @@
-# stickling
+# Stickling
 
-**stickling** is a platform for finding, buying, selling and trading plants, as well as seeking help for the plants you have and love. Houseplants are a fantastiv way of brightening up your day-to-day life, and **stickling** aims to open up this world for as many people as possible in an easy manner. 
+**Stickling** is a platform for finding, buying, selling and trading plants, as well as seeking help for the plants you have and love. Houseplants are a fantastic way of brightening up your day-to-day life, and **Stickling** aims to open up this world to as many people as possible in an easy manner. 
 
 ## UX
  
@@ -36,16 +36,14 @@ The sign up and login pages were designed to be quite simple, and to look quite 
 
 ![Greenhouse view desktop](/wireframes/greenhouse_desktop.png)
 
-These three images above match what are the three main features of stickling. All they are meant to separate the different types of posts that stickling focuses on. 
+These three images above match what are the three main features of Stickling. They are meant to separate the different types of posts that Stickling focuses on. 
 
 ![Mobile view desktop](/wireframes/mobile_view.png)
 
-As you can see these is only one wireframe for the mobile view, it is this way because it was used more to represent the general ratio the content would have on the mobile view compared to the desktop view.
+As you can see there is only one wireframe for the mobile view. It is this way because it was used more to represent the general ratio of the content on the mobile view compared to the desktop view.
 
 
 ## Features
-
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
 
 The minimal viable product of this project is based around the CRUD functionality of the posts and comments. The user authentication was deemed as not essential at this point due to the complexity that it would entail. You can read more about this in the features left to implement section. 
  
@@ -57,24 +55,23 @@ The minimal viable product of this project is based around the CRUD functionalit
 - Create new posts - allows users to create new posts for both Propagation Station and Plant nursery by filling out the necessary information such as email for contact, a photo for the post, etc. 
     - Note that the photos are currently based on Url instead of uploading them, this is due to the limited database size that this project currently has. 
 - View posts - allows users to see all the data relating to the post on a focus page for individual posts. It also displays contact, edit, and delete buttons on this page.
-- Edit posts - Allows users to update the data of the posts by first clicking the edit button and then entering new information into the fields on the page. 
-- Detete posts - allows users to remove a post comletely by entering a posts focus page and pressing the delete button. 
+- Edit posts - allows users to update the data of the posts by first clicking the edit button and then entering new information into the fields on the page. 
+- Delete posts - allows users to remove a post completely by entering a post's focus page and pressing the delete button. 
 
-- Create comments - allows users to leave a comment on specific posts by filling out username and the comment text.
+- Create comments - allows users to leave a comment on specific posts by filling out username and the comment fields.
 - Delete comments - allows users to remove a comment by clicking the delete button on the comment. 
 
-- Contact user - Allows the user to contect the poster by clicking the Contact button. It then opens up an email ith the email and subject fields filled in. The user then only has to fill out the text field to inquire about the post. 
+- Contact user - allows the user to contect the poster by clicking the Contact button. It then opens up an email with the email address and subject fields filled in. The user only has to fill out the text field and send it. 
     - This feature is only available on posts on the Propagation Station feed. 
 
 ### Features Left to Implement
-- User authentication - will allow a user to create an account that will store their contact information, username and more to prepopulate some fields of posts and comments to relate these to the specific user. This would also solve issues of users editing or deleting other users posts. 
-- Userpage - will allow users to see all their data on one page as well as their all their posts. It would also allow other users to see all this. 
+- User authentication - will allow a user to create an account that will store their contact information, username, and more, to prepopulate some fields of posts and comments to relate these to the specific user. This would also solve issues of any user editing or deleting other users' posts. 
+- Userpage - will allow users to see all their data on one page as well as their posts. It would also allow ursers to see other users profiles. 
 - Notifications - will alert users when others interact with their posts. 
 
+- Greenhouse - this will be a feed with the focus on social aspects, compared to the other feeds that exist in this project. 
 
-- Greenhouse - this will be a feed with the focus being on the social aspects compared to the other feeds that exist in this project. 
-
-- Likes - This feature would mainly be used on the Greenhouse, it would append a list of users that have liked the post and show a total number of likes on the post. 
+- Likes - this feature would mainly be used on the Greenhouse, it would append a list of users that have liked the post and show a total number of likes on the post. 
 
 - Upload photos - this will allow users to upload an image instead of using a url when making a new post. 
 
@@ -82,11 +79,11 @@ The minimal viable product of this project is based around the CRUD functionalit
 
 - Edit comments -this would allow users to update the posts to correct spelling errors and the like. It would also store the previous edits for all users to access to avoid users using this feature maliciously. 
 
-- Server side validation for forms - the new post and new comment functions currently have no server side validation to avoid any misuse, implementing this will resolve possible issues with the functions. 
+- Server side validation for forms - the 'new post' and 'new comment' functions currently have no server side validation to avoid any misuse, implementing this will resolve possible issues with the functions. 
 
 - Search - will allow users to display posts that match keywords they have entered into the search bar. 
 
-- Time stamp - Will put a timestamp on all posts, which will be used to sort the feed.
+- Time stamp - will put a timestamp on all posts, which will be used to sort the feeds.
 
 ## Technologies Used
 
@@ -113,7 +110,7 @@ This project was put through manual testing. Both by myself and by other people.
     3. Try to submit the form and verify that it doesn't submit and sends an error message
     4. Repeat step 3 for all the fields (except for the location fields as it isn't required)
 
-**Bugs that appeared** during this test is the fact that any user can go in and remove the required tag and submit the form. This will be fixed in the future when server side validation is added.
+**Bugs that appeared** during this test is the fact that any user can go in and remove the required tag of any field and submit the form. This will be fixed in the future when server side validation is added.
 
 *This next step ties into the first test, it can be seen as a continuation of it.*
 2. Read posts:
@@ -124,7 +121,7 @@ This project was put through manual testing. Both by myself and by other people.
     5. Follow step 2 with the feed checkbox set to Plant Nursery and click submit
     6. Check if the new post has appeared on the feed
 
-3. Edit the post
+3. Edit the post:
     1. Click the 'view post' button on the post you want to edit
     2. Check if all the fields are already filled in with the data from the original post
     3. Change some data in any of the fields
