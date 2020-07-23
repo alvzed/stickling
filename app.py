@@ -5,7 +5,6 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
-
 if os.path.exists("env.py"):
     import env
 secret_uri = os.environ.get('secret_uri')
@@ -35,6 +34,7 @@ def plant_nursery():
 def view_post(post_id):
     the_post = mongo.db.post.find_one({'_id': ObjectId(post_id)})
     if the_post is None:
+        # This is a 404 redirect
         return redirect(url_for('page_not_found'))
     comments = mongo.db.comments.find({'post_id': post_id})
     return render_template('post.html', post=the_post, comments=comments)
@@ -48,6 +48,7 @@ def new_post():
 @app.route('/create_post', methods=['POST'])
 def create_post():
     posts = mongo.db.post
+    # The variable below makes sure that the redirect is to the correct feed
     form = request.form.to_dict()
     posts.insert_one(request.form.to_dict())
     return redirect(url_for(form['feed']))
@@ -62,6 +63,7 @@ def edit_post(post_id):
 @app.route('/update_post/<post_id>', methods=['POST'])
 def update_post(post_id):
     posts = mongo.db.post
+    # The variable below makes sure that the redirect is to the correct feed
     form = request.form.to_dict()
     posts.update({'_id': ObjectId(post_id)},
                  {
