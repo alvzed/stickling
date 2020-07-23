@@ -113,6 +113,7 @@ This project was put through manual testing. Both by myself and by other people.
 **Bugs that appeared** during this test is the fact that any user can go in and remove the required tag of any field and submit the form. This will be fixed in the future when server side validation is added.
 
 *This next step ties into the first test, it can be seen as a continuation of it.*
+
 2. Read posts:
     1. Go to create a post
     2. Fill out all the required fields and press submit, with the feed checkbox set to Propagation Station
