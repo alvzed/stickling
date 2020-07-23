@@ -110,7 +110,7 @@ This project was put through manual testing. Both by myself and by other people.
     3. Try to submit the form and verify that it doesn't submit and sends an error message
     4. Repeat step 3 for all the fields (except for the location fields as it isn't required)
 
-**Bugs that appeared** during this test is the fact that any user can go in and remove the required tag of any field and submit the form. This will be fixed in the future when server side validation is added.
+**Bugs that appeared** during this test was the fact that any user can go in and remove the required tag of any field and submit the form. This will be fixed in the future when server side validation is added.
 
 *This next step ties into the first test, it can be seen as a continuation of it.*
 
@@ -134,13 +134,13 @@ This project was put through manual testing. Both by myself and by other people.
 4. Delete the post
     1. Click the 'view post' button on the post you want to delete
     2. Click the delete button
-    3. Cehck if the post has been removed 
+    3. Check if the post has been removed 
 
-The comments went through similar testing, though it was much simpler since it doesn't require as much testing of the form and the edit has not been implemented yet. 
+The comments went through similar testing, though it was much simpler since it doesn't require as much testing of the form and the edit function has not been implemented yet. 
 
 1. Create comments
-    1. Try to Submit and empty form, see if it shows an error message.
-    2. Try to Submit with only one of the fields filled in, see if it shows an error message. Repeat this step with reversing which field is filled in. 
+    1. Try to Submit an empty form, see if it shows an error message.
+    2. Try to Submit with only one of the fields filled in, see if it shows an error message. Repeat this step, switching which field is filled in. 
     3. Finally submit a filled out form and see if the the comment has now appeared on the post. 
 
 2. Delete a comment
@@ -158,40 +158,45 @@ The comments went through similar testing, though it was much simpler since it d
 This feature comes with some big security flaws, so it will be replaced with a message board as soon as user authentication is implemented. 
 
 ##### The site now
+
 Due to differences in the scope and the minimal viable product the site ended up with some differences, specifically for the landing page which now looks like this: 
+
 ![The deployed landing page](/wireframes/stickling_index.png)
 ![The deployed landing page for phone](/wireframes/stickling_index_phone.png)
+
 This is mainly because this version doesn't have user authentication as of yet, so the login and sign up pages were not necessary.
 
 The two different feeds that made it to the final version are the Propagation Station and Plant Nursery. Images below. 
+
 ![Deployed Propagation Station](/wireframes/prop_stat_index.png)
 ![Deployed Propagation Station for phone](/wireframes/prop_stat_phone.png)
 ![The deployed Plant Nursery](/wireframes/plant_nursery.png)
 ![The deployed Plant Nursery for phone](/wireframes/plant_nursery_phone.png)
 
-As you can see the main difference between these and the wireframe is that the photo is now on the left side of the post instead of the top. This is because I opted for a title on the posts since it brings more context to the post which I felt was needed due to the nature of these two feeds. 
+As you can see the main difference between these and the wireframes are that the photos are now on the left side of the posts instead of the top. This is because I opted for a title on the posts since it brings more context to them. I felt this was needed due to the nature of the two feeds that have been implement. 
 
-The deployed version also has a a 'focus' page which looks like this: 
+The deployed version also has a 'focus' page which looks like this: 
+
 ![The posts](/wireframes/post_focus.png)
 
-This was implemented so that users can add longer descrition on the posts. These are not present on the feed due to them cluttering up the feeds. 
+This was implemented so that users can add longer description on the posts. These are not present on the feed due to them cluttering up the feeds. 
 
 ## Deployment
-Below is a short summary of how to deploy a site on heroku, I do not give as good of an explanation as you can find [on their site](https://devcenter.heroku.com/articles/getting-started-with-python). Please go to this site for a much better explanation.
+Below is a short summary of how to deploy a site on Heroku, I do not give as good of an explanation as you can find [on their site](https://devcenter.heroku.com/articles/getting-started-with-python). Please go to this site for a much better explanation.
 
-This project is hosted on Heroku, specifically with the heroku CLI for python. 
-First make sure that you've install heroku on your device, if not the install it. 
+This project is hosted on Heroku, specifically with the Heroku CLI for python. 
+First make sure that you've installed Heroku on your device, if not then install it. 
 
-Login to heroku through the terminal by typing heroku login and pressing enter. 
-Push the project to heroku with your preferred method. 
-Set up all the environment variables you need in the settings of your project (For this project it is IP set to 0.0.0.0, PORT set to 5000 and a variable called secret_uri that contains the URI needed to connect to the MongoDB database). 
+Login to Heroku through the terminal by typing Heroku login and pressing enter. 
+Push the project to Heroku with your preferred method. 
+Set up all the config vars you need in the settings of your project (For this project it is IP set to 0.0.0.0, PORT set to 5000 and a variable called secret_uri that contains the URI needed to connect to the MongoDB database). 
 
-Make sure to have a procfile and requirements.txt so the webapp sets up properly. 
+Make sure to have a Procfile and requirements.txt so the webapp sets up properly. 
 
-Then launch the site with the command heroku ps:scale web=1. 
-A complete guide to deployment process can be found [here](https://devcenter.heroku.com/articles/getting-started-with-python)
+Then launch the site with the command Heroku ps:scale web=1. 
+A complete guide to the deployment process can be found [here](https://devcenter.heroku.com/articles/getting-started-with-python).
 
-**The main difference** between the deployed app and the development app can be found on the very top of app.py, you can see the line 'if os.path.exists("env.py"): import env'. This is because there is a .gitignore file that targets the file env.py. In the development version this contains the variable secret_uri that we don't pushed to github for security reasons. This variable is of course stored in the config vars in Heroku. 
+**The main difference** between the deployed app and the development app can be found on the very top of app.py, you can see the line 'if os.path.exists("env.py"): import env'. This is because there is a .gitignore file that targets the file env.py. In the development version this contains the variable secret_uri that we don't push to github for security reasons. This variable is of course stored in the config vars in Heroku. 
 
 
 ## Credits
@@ -204,7 +209,7 @@ Another big thank you to Lovina the cat for providing me with several usernames 
 - The content on this site was made by yours truly and the testers mentioned above.
 
 ### Media
-- The photos on this site are mainly from [unsplash](https://unsplash.com/s/photos/houseplant)
+- The photos on this site are mainly from [unsplash](https://unsplash.com/s/photos/houseplant).
 
 ### Acknowledgements
 
