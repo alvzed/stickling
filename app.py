@@ -49,7 +49,6 @@ def new_post():
 def create_post():
     posts = mongo.db.post
     form = request.form.to_dict()
-    validate_form(form)
     posts.insert_one(request.form.to_dict())
     return redirect(url_for(form['feed']))
 
@@ -63,15 +62,17 @@ def edit_post(post_id):
 @app.route('/update_post/<post_id>', methods=['POST'])
 def update_post(post_id):
     posts = mongo.db.post
+    form = request.form.to_dict()
     posts.update({'_id': ObjectId(post_id)},
                  {
                     'title': request.form.get('title'),
                     'picture': request.form.get('picture'),
                     'location': request.form.get('location'),
                     'barter': request.form.get('barter'),
-                    'description': request.form.get('description')
+                    'description': request.form.get('description'),
+                    'feed': request.form.get('feed')
                  })
-    return redirect(url_for('propagation_station'))
+    return redirect(url_for(form['feed']))
 
 
 @app.route('/delete_post/<post_id>')

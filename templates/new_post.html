@@ -51,7 +51,7 @@
 
   <div class="form-group">
     <label for="description">Post description</label>
-    <textarea class="form-control" name="description" id="description" rows="3" placeholder="Your post text..."></textarea>
+    <textarea class="form-control" name="description" id="description" rows="3" placeholder="Your post text..." required></textarea>
   </div>
 
   <button type="submit" class="btn btn-primary-green" name="action">Submit</button>
@@ -62,6 +62,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 
 <script>
+    // This function makes the market field appear when the propagation station checkbox is checked //
   $(document).ready(function(){
     $('#propagation_station').click(function(){
       if ($(this).prop('checked') == true){
@@ -70,7 +71,7 @@
 
     });
   });
-
+    // This function makes the market fields disappear when the plant nursery checkbox is checked //
   $(document).ready(function(){
     $('#plant_nursery').click(function(){
       if ($(this).prop('checked') == true){
@@ -79,6 +80,7 @@
     });
   });
 
+    // this function makes the checkboxes act as radio buttons instead of normal checkboxes //
   $(".form-check-input").change(function() {
     $(".form-check-input").prop('checked', false);
     $(this).prop('checked', true);
