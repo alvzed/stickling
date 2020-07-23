@@ -422,3 +422,13 @@ p {
   width: 48%;
   margin-bottom: 1rem;
 }
+
+/* -------------- 404 page ------------- */
+#not_found {
+    margin: 8vh 0;
+}
+
+#not_found h1 {
+    font-size: 5rem;
+    margin-bottom: 4vh;
+}
