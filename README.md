@@ -1,4 +1,4 @@
-# Your Project's Name
+# stickling
 
 **stickling** is a platform for finding, buying, selling and trading plants, as well as seeking help for the plants you have and love. Houseplants are a fantastiv way of brightening up your day-to-day life, and **stickling** aims to open up this world for as many people as possible in an easy manner. 
 
