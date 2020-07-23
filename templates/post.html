@@ -44,6 +44,7 @@
         <label for="comment">Comment</label>
         <input type="text" class="form-control" id="comment" name="comment" placeholder="New Comment" required>
       </div>
+      <!-- The name and value on the submit button append the posts id to the comment -->
       <button type="submit" class="btn btn-primary-green" name="post_id" value="{{ post._id }}">Add Comment</button>
     </form>
   </div>

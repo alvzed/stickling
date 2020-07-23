@@ -14,8 +14,11 @@
     <label for="location">Your location</label>
     <input type="text" class="form-control" name="location" id="location" placeholder="{{ post.location }}" value="{{ post.location }}">
   </div>
+  <!-- This if statement only adds the market field if the field is set to Propagation Station -->
+  {% if post.feed == 'propagation_station' %}
   <div class="form-group">
     <label for="barter">Choose market</label>
+    <!-- This if-else statement sets the value to the value it has in the database -->
     {% if post.barter == 'Want to buy' %}
     <select class="form-control" name="barter" id="barter" required>
       <option value="Want to buy" selected>Want to buy</option>
@@ -36,6 +39,7 @@
     </select>
     {% endif %}
   </div>
+  {% endif %}
   <div class="form-group">
     <label for="description">Post description</label>
     <textarea class="form-control" name="description" id="description" rows="3">{{ post.description }}</textarea>
