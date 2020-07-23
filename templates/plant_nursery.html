@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
   {% for post in posts %}
     {% if post.feed == 'plant_nursery' %}
       <div class="row container post_feed plant_nursery_post">
@@ -19,4 +18,5 @@
       </div> 
     {% endif %}
   {% endfor %}
+
 {% endblock %}

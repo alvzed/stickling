@@ -86,6 +86,8 @@ The minimal viable product of this project is based around the CRUD functionalit
 
 - Search - will allow users to display posts that match keywords they have entered into the search bar. 
 
+- Time stamp - Will put a timestamp on all posts, which will be used to sort the feed.
+
 ## Technologies Used
 
 - [Flask 1.1.2](https://flask.palletsprojects.com/en/1.1.x/)
@@ -103,24 +105,59 @@ The minimal viable product of this project is based around the CRUD functionalit
 
 ## Testing
 
+This project was put through manual testing. Both by myself and by other people. The things that needed the testing were mainly the CRUD functionality for the posts and the comments, these were put through the following steps.
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+1. Create posts:
+    1. Go to one of the feeds
+    2. Click the plus button 
+    3. Try to submit the form and verify that it doesn't submit and sends an error message
+    4. Repeat step 3 for all the fields (except for the location fields as it isn't required)
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+**Bugs that appeared** during this test is the fact that any user can go in and remove the required tag and submit the form. This will be fixed in the future when server side validation is added.
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+*This next step ties into the first test, it can be seen as a continuation of it.*
+2. Read posts:
+    1. Go to create a post
+    2. Fill out all the required fields and press submit, with the feed checkbox set to Propagation Station
+    3. Check the feed if the new post has appeared
+    4. Return to step 1
+    5. Follow step 2 with the feed checkbox set to Plant Nursery and click submit
+    6. Check if the new post has appeared on the feed
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+3. Edit the post
+    1. Click the 'view post' button on the post you want to edit
+    2. Check if all the fields are already filled in with the data from the original post
+    3. Change some data in any of the fields
+    4. Click submit 
+    5. Check to see if the update has passed correctly
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+**Bugs that appeared** during this test was that the edit would remove the feed variable from the database and the post would no longer be shown. This has since been fixed.
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+4. Delete the post
+    1. Click the 'view post' button on the post you want to delete
+    2. Click the delete button
+    3. Cehck if the post has been removed 
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+The comments went through similar testing, though it was much simpler since it doesn't require as much testing of the form and the edit has not been implemented yet. 
+
+1. Create comments
+    1. Try to Submit and empty form, see if it shows an error message.
+    2. Try to Submit with only one of the fields filled in, see if it shows an error message. Repeat this step with reversing which field is filled in. 
+    3. Finally submit a filled out form and see if the the comment has now appeared on the post. 
+
+2. Delete a comment
+    1. Go to the comment you wish to delete
+    2. Click the delete button
+    3. Check if the comment has been removed. 
+
+1. Contact a user 
+    1. Go to a post on the Propagation Station
+    2. Click the 'View Post' button
+    3. Click the contact button
+    4. Check that an email opens up
+    5. Check if the email and subject fields are filled in 
+
+This feature comes with some big security flaws, so it will be replaced with a message board as soon as user authentication is implemented. 
 
 ##### The site now
 Due to differences in the scope and the minimal viable product the site ended up with some differences, specifically for the landing page which now looks like this: 
@@ -133,13 +170,16 @@ The two different feeds that made it to the final version are the Propagation St
 ![Deployed Propagation Station for phone](/wireframes/prop_stat_phone.png)
 ![The deployed Plant Nursery](/wireframes/plant_nursery.png)
 ![The deployed Plant Nursery for phone](/wireframes/plant_nursery_phone.png)
+
 As you can see the main difference between these and the wireframe is that the photo is now on the left side of the post instead of the top. This is because I opted for a title on the posts since it brings more context to the post which I felt was needed due to the nature of these two feeds. 
 
 The deployed version also has a a 'focus' page which looks like this: 
 ![The posts](/wireframes/post_focus.png)
+
 This was implemented so that users can add longer descrition on the posts. These are not present on the feed due to them cluttering up the feeds. 
 
 ## Deployment
+Below is a short summary of how to deploy a site on heroku, I do not give as good of an explanation as you can find [on their site](https://devcenter.heroku.com/articles/getting-started-with-python). Please go to this site for a much better explanation.
 
 This project is hosted on Heroku, specifically with the heroku CLI for python. 
 First make sure that you've install heroku on your device, if not the install it. 
@@ -157,13 +197,17 @@ A complete guide to deployment process can be found [here](https://devcenter.her
 
 
 ## Credits
+A big thank you to Emma and Sanna for giving me feedback on the project during the early stages, and to Vendela, Elvira, Emma (again), and Sanna (again) for helping me with testing. 
+
+Another big thank you to Lovina the cat for providing me with several usernames during testing.
+
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- The content on this site was made by yours truly and the testers mentioned above.
 
 ### Media
-- The photos used in this site were obtained from ...
+- The photos on this site are mainly from [unsplash](https://unsplash.com/s/photos/houseplant)
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- I received inspiration for this project from my dying tomato plant, which I seem to be completely unable to save.  
