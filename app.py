@@ -66,14 +66,14 @@ def update_post(post_id):
     # The variable below makes sure that the redirect is to the correct feed
     form = request.form.to_dict()
     posts.update({'_id': ObjectId(post_id)},
-                 {
+                 {'$set': {
                     'title': request.form.get('title'),
                     'picture': request.form.get('picture'),
                     'location': request.form.get('location'),
                     'barter': request.form.get('barter'),
                     'description': request.form.get('description'),
                     'feed': request.form.get('feed')
-                 })
+                 }})
     return redirect(url_for(form['feed']))
 
 
