@@ -85,28 +85,6 @@ The minimal viable product of this project is based around the CRUD functionalit
 
 - Time stamp - will put a timestamp on all posts, which will be used to sort the feeds.
 
-#### How this ties up with user stories
-
-- As Emma, I want to buy a new cactus for my living room. 
-
-Emma can quite easily go onto the Propagation Station and look through the posts if anyone has posted about selling a cactus. If this is the case then she can click 'view post' and then 'contact' to send an email to the seller. 
-
-If there are no posts mentioning a cactus she can make a new post with the about wanting to buy a cactus. 
-
-This user story ties together with John, who was looking to sell a cactus, and he can follow the same steps and then communicate with Emma about selling his cactus to her. 
-
-- As Sanna, I have a monstera I want to trade for a tomato plant. 
-Just like Emma, Sanna can look through the Propagation Station if anyone has a tomato plant they want to trade. If not, Sanna can create a new post set to Want to trade saying that she has a monstera and specifying what she'd like  to trade it for.
-
-- As Elton, I want to rescue my dying plant by seeking advice on how to treat it properly. 
-- As Gus, I want to share my knowledge with other people and help them with their plants. 
-
-These two stories work together on the Plant Nursery feed. 
-Elton can make a post about his dying plant by clicking new post and setting the checkbox to plant nursery. After posting this Gus can look at the post and leave comments to give John advice on how to save his plant. 
-
-- As Amund I like to share my plant journey online with other people, both for inspiration and for fun.
-
-This user story will be solved in the future when user authentication, likes, and the Greenhouse feed has been implemented. 
 
 ## Technologies Used
 
@@ -179,6 +157,30 @@ The comments went through similar testing, though it was much simpler since it d
     5. Check if the email and subject fields are filled in 
 
 This feature comes with some big security flaws, so it will be replaced with a message board as soon as user authentication is implemented. 
+
+
+#### How this ties up with user stories
+
+- As Emma, I want to buy a new cactus for my living room. 
+
+Emma can quite easily go onto the Propagation Station and look through the posts if anyone has posted about selling a cactus. If this is the case then she can click 'view post' and then 'contact' to send an email to the seller. 
+
+If there are no posts mentioning a cactus she can make a new post with the about wanting to buy a cactus. 
+
+This user story ties together with John, who was looking to sell a cactus, and he can follow the same steps and then communicate with Emma about selling his cactus to her. 
+
+- As Sanna, I have a monstera I want to trade for a tomato plant. 
+Just like Emma, Sanna can look through the Propagation Station if anyone has a tomato plant they want to trade. If not, Sanna can create a new post set to Want to trade saying that she has a monstera and specifying what she'd like  to trade it for.
+
+- As Elton, I want to rescue my dying plant by seeking advice on how to treat it properly. 
+- As Gus, I want to share my knowledge with other people and help them with their plants. 
+
+These two stories work together on the Plant Nursery feed. 
+Elton can make a post about his dying plant by clicking new post and setting the checkbox to plant nursery. After posting this Gus can look at the post and leave comments to give John advice on how to save his plant. 
+
+- As Amund I like to share my plant journey online with other people, both for inspiration and for fun.
+
+This user story will be solved in the future when user authentication, likes, and the Greenhouse feed has been implemented. 
 
 
 ## MongoDB Schema
